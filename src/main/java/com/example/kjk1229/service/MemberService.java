@@ -15,7 +15,7 @@ public class MemberService {
 
     public MemberResponseDto findMember(Long id) {
         MemberResponseDto memberResponseDto = memberRepository.findById(id).orElseThrow(
-                () -> new IllegalArgumentException("아이디가 존재하지 않습니다.")
+                () -> new NullPointerException ("회원 상세 조회 실패")
         );
         return memberResponseDto;
     }
